@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 # بارگذاری مدل و توکنایزر
-tokenizer = AutoTokenizer.from_pretrained("nafisehNik/mt5-persian-summary")
-model = AutoModelForSeq2SeqLM.from_pretrained("nafisehNik/mt5-persian-summary")
+tokenizer = T5Tokenizer.from_pretrained("nafisehNik/mt5-persian-summary")
+model = T5ForConditionalGeneration.from_pretrained("nafisehNik/mt5-persian-summary")
 
 app = Flask(__name__)
 
